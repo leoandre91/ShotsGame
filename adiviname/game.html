@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.101.0">
+  <title>Adivina-me</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v6.1.2/css/all.css'>
+
+  <style>
+    body {
+      background: #6610f2;
+      background: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .float-md-end {
+      float: none !important;
+    }
+
+    .nav-masthead .nav-link {
+      color: #fff !important;
+    }
+
+    @keyframes float {
+      0% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+      }
+
+      10% {
+        -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+      }
+
+      20% {
+        -webkit-transform: translate(-3px, 0px) rotate(1deg);
+      }
+
+      30% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+      }
+
+      40% {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+      }
+
+      50% {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+      }
+
+      60% {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+      }
+
+      70% {
+        -webkit-transform: translate(2px, 1px) rotate(-1deg);
+      }
+
+      80% {
+        -webkit-transform: translate(-1px, -1px) rotate(1deg);
+      }
+
+      90% {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+      }
+
+      100% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+      }
+    }
+
+    #logo {
+      transform: translatey(0px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .preloader_body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);
+      z-index: 9999;
+      transition: all 500ms linear;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .visuallyhidden {
+      opacity: 0;
+    }
+
+    .preloader {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin: -30px 0 0 -30px;
+      -webkit-animation: spin .7s linear infinite;
+      -moz-animation: spin .7s linear infinite;
+      animation: spin .7s linear infinite;
+    }
+
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader img {
+      width: 100%;
+      filter: hue-rotate(150deg);
+    }
+
+    .logo-preloader {
+      display: block;
+      width: 80vw;
+      max-width: 600px;
+      transform: translatey(0px);
+      animation: float 6s ease-in-out infinite;
+      margin-right: auto !important;
+      margin-left: auto !important;
+      margin-top: 35vh !important;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="cover.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white">
+  <div id="preloader" class="preloader_body">
+    <img class="logo-preloader" src="../img/logo.png" alt="Logo">
+    <div class="preloader">
+      <img src="../img/loading.png" alt="">
+    </div>
+  </div>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <div class="mb-0"><img class="mx-auto d-block" style="width: 60vw; max-width: 600px;"
+            src="../img/logo-adiviname.png" alt="LogoAdiviname"></div>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" aria-current="page" onclick="salir();">Salir</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1 class="text-pregunta">¿Pregunta?</h1>
+      <p class="lead text-data">Todos responden, el que falle toma 1 shot.</p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white"
+          onclick="nuevapregunta();">Siguiente</a>
+      </p>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <p>Juego de Tomar</p>
+    </footer>
+  </div>
+
+  <script>
+    window.onload = function () {
+      document.getElementsByClassName("lead")[0].style.display = "none";
+      document.getElementsByClassName("lead")[1].style.display = "none";
+      document.getElementsByClassName("text-pregunta")[0].style.display = "none";
+    }
+
+    fetch('https://cureycia.com/api/api.php?game=adiviname')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        list = data;
+        document.getElementsByClassName("lead")[0].style.display = "block";
+        document.getElementsByClassName("lead")[1].style.display = "block";
+        document.getElementsByClassName("text-pregunta")[0].style.display = "block";
+        nuevapregunta();
+      })
+      .catch(function (error) {
+        document.getElementsByClassName("text-pregunta")[0].style.display = "block";
+        document.getElementsByClassName("text-pregunta")[0].innerHTML = '<i class="fa-solid fa-face-sad-cry fa-2xl"></i><br><br> Cargue nuevamente el juego';
+        console.log(error);
+      })
+
+    function getRandomArbitrary(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function nuevapregunta() {
+      var pregunta = getRandomArbitrary(1, list.length);
+      /* console.log(pregunta);
+      console.log(list[pregunta - 1]); */
+      document.getElementsByClassName("text-pregunta")[0].textContent = list[pregunta - 1][0];
+    }
+
+    function salir() {
+      Swal.fire({
+        heightAuto: false,
+        title: 'Salir?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.onbeforeunload = "";
+          go_to();
+        }
+      })
+    }    
+  </script>
+
+  <script>
+    let preloader = document.getElementById('preloader')
+
+    function preloaderfn(st) {
+
+      if (st == false) {
+        preloader.classList.remove('hidden');
+        setTimeout(function () {
+          preloader.classList.remove('visuallyhidden');
+        }, 20);
+      } else {
+        preloader.classList.add('visuallyhidden');
+        preloader.addEventListener('transitionend', function (e) {
+          preloader.classList.add('hidden');
+        }, {
+          capture: false,
+          once: true,
+          passive: false
+        });
+      }
+
+    };
+
+    function go_to() {
+      document.getElementById('preloader').style = "background-image: radial-gradient(circle, rgba(0, 166, 255, 1) 0%, rgba(7, 75, 194, 1) 100%);";
+      preloaderfn(false);
+      setTimeout(function () {
+        window.location.href = '../';
+      }, 1000);
+    }
+  </script>
+
+  <script>
+    window.onload = function () {
+      preloaderfn(true);
+    }
+  </script>
+
+  <script type="text/javascript">
+    window.onbeforeunload = function () {
+      return "Desea recagar la pagina?";
+    }
+  </script>
+
+</body>
+
+</html>
