@@ -294,7 +294,8 @@
     let preloader = document.getElementById('preloader')
 
     function preloaderfn(st) {
-
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
       if (st == false) {
         preloader.classList.remove('hidden');
         setTimeout(function () {

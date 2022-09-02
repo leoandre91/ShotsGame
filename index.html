@@ -234,6 +234,8 @@
     <script>
         window.onload = function () {
             setTimeout(function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
                 document.getElementsByClassName('preloader')[0].style.display = "block";
                 document.getElementsByClassName('logo-preloader')[0].style = "margin-top: 35vh !important;";
                 setTimeout(function () {

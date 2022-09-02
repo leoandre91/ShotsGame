@@ -24,7 +24,7 @@
     <meta name="msapplication-TileColor" content="#00a6ff">
     <meta name="msapplication-TileImage" content="ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#00a6ff">
-    
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v6.1.2/css/all.css'>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -289,7 +289,8 @@
         let preloader = document.getElementById('preloader')
 
         function preloaderfn(st) {
-
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
             if (st == false) {
                 preloader.classList.remove('hidden');
                 setTimeout(function () {
