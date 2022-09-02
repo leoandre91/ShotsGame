@@ -228,7 +228,7 @@
         <div class="mb-0"><img id="logo" class="mx-auto d-block" style="width: 60vw; max-width: 600px;"
             src="../img/logo-adiviname.png" alt="LogoAdiviname"></div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="../">Salir</a>
+          <a class="nav-link fw-bold py-1 px-0" aria-current="page" onclick="go_to_home();">Salir</a>
         </nav>
       </div>
     </header>
@@ -319,6 +319,14 @@
       preloaderfn(false);
       setTimeout(function () {
         window.location.href = 'game.html';
+      }, 1000);
+    }
+
+    function go_to_home() {
+      document.getElementById('preloader').style = "background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);";
+      preloaderfn(false);
+      setTimeout(function () {
+        window.location.href = '../home.html';
       }, 1000);
     }
   </script>
