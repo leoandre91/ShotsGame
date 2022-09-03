@@ -297,7 +297,7 @@
     </main>
 
     <footer class="mt-auto text-white-50 text-center">
-        <p>ShotsGame - PowerDevelop 2022</p><b>v0.1.6 Beta</b>
+        <p>ShotsGame - PowerDevelop 2022</p><b>v0.1.7 Beta</b>
     </footer>
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -330,13 +330,13 @@
         function go_to(game) {
 
             if (game == "soyelamigo") {
-                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #16b800 0%, #0e6d02 100%);";
+                document.getElementById('preloader').style = "background-image: url('img/bg1.jpg');";
             } else if (game == "adiviname") {
-                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);";
+                document.getElementById('preloader').style = "background-image: url('img/bg2.jpg');";
             } else if (game == "culturachupistica") {
-                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #342e2b 0%, #2e221d 100%);";
+                document.getElementById('preloader').style = "background-image: url('img/bg3.jpg');";
             } else if (game == "pregunticas") {
-                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #f0dd7c 0%, #c9b056 100%);";
+                document.getElementById('preloader').style = "background-image: url('img/bg4.jpg');";
             }
 
             preloaderfn(false);
