@@ -31,8 +31,8 @@
 
     <style>
         body {
-            background: rgb(0, 166, 255);
-            background: radial-gradient(circle, rgba(0, 166, 255, 1) 0%, rgba(7, 75, 194, 1) 100%);
+            background: #00a6ff;
+            background: radial-gradient(circle, #00a6ff 0%, #074bc2 100%);
         }
 
         .bd-placeholder-img {
@@ -313,9 +313,10 @@
         };
 
         function go_to(game) {
-            if (game = "soyelamigo") {
+           
+            if (game == "soyelamigo") {
                 document.getElementById('preloader').style = "background-image: radial-gradient(circle, #16b800 0%, #0e6d02 100%);";
-            } else if (game = "adiviname") {
+            } else if (game == "adiviname") {
                 document.getElementById('preloader').style = "background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);";
             }
 
