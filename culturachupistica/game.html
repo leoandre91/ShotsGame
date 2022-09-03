@@ -227,7 +227,7 @@
     <header class="mb-auto">
       <div>
         <div class="mb-0"><img class="mx-auto d-block" style="width: 60vw; max-width: 600px;"
-            src="../img/logo-adiviname.png" alt="LogoAdiviname"></div>
+            src="../img/logo-culturachupistica.png" alt="LogoCulturaChupistica"></div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link fw-bold py-1 px-0" aria-current="page" onclick="salir();">Salir</a>
         </nav>
@@ -280,7 +280,37 @@
 
     function nuevapregunta() {
       var pregunta = getRandomArbitrary(1, list.length);
-      document.getElementsByClassName("text-pregunta")[0].textContent = list[pregunta - 1][0];
+      document.getElementsByClassName("lead")[0].style.display = "none";
+      document.getElementsByClassName("lead")[1].style.display = "none";
+      document.getElementsByClassName("text-pregunta")[0].style.display = "none";
+      let timerInterval
+      Swal.fire({
+        heightAuto: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        title: 'Preparados!',
+        html: '<h1><b></b></h1>',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Math.trunc((Swal.getTimerLeft() / 1000) + 1)
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          document.getElementsByClassName("text-pregunta")[0].textContent = list[pregunta - 1][0];
+          document.getElementsByClassName("lead")[0].style.display = "block";
+          document.getElementsByClassName("lead")[1].style.display = "block";
+          document.getElementsByClassName("text-pregunta")[0].style.display = "block";          
+        }
+      })
     }
 
     function salir() {
