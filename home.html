@@ -233,7 +233,7 @@
                 <div class="col">
                     <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                         style="background-image: url('img/unsplash-photo-1.jpg'); cursor: pointer;"
-                        onclick="window.location.href = '';">
+                        onclick="go_to('soyelamigo');">
                         <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
                             <h2 class="mb-1 display-6 lh-1 fw-bold text-center">Soy el amigo</h2>
                             <ul class="d-flex list-unstyled mt-auto mb-0">
@@ -265,7 +265,7 @@
                 <div class="col">
                     <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                         style="background-image: url('img/unsplash-photo-3.jpg'); cursor: pointer;"
-                        onclick="window.location.href = '';">
+                        onclick="go_to('culturachupistica');">
                         <div class="d-flex flex-column h-100 p-4 pb-3 text-shadow-1">
                             <h2 class="mb-1 display-6 lh-1 fw-bold text-center">Cultura Chupistica</h2>
                             <ul class="d-flex list-unstyled mt-auto mb-0">
@@ -281,6 +281,9 @@
         </div>
     </main>
 
+    <footer class="mt-auto text-white-50 text-center">
+        <p>ShotsGame - <a href="mailto:leoandre91@hotmail.com">PowerDevelop</a> 2022</p><b>v0.1.3 Beta</b>
+    </footer>
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -310,10 +313,15 @@
         };
 
         function go_to(game) {
-            document.getElementById('preloader').style = "background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);";
+            if (game = "soyelamigo") {
+                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #16b800 0%, #0e6d02 100%);";
+            } else if (game = "adiviname") {
+                document.getElementById('preloader').style = "background-image: radial-gradient(circle, #6610f2, #6421d9, #612bc1, #5e31a9, #593692);";
+            }
+
             preloaderfn(false);
             setTimeout(function () {
-                window.location.href = '/adiviname';
+                window.location.href = '/' + game;
             }, 1000);
         }
     </script>
